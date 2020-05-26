@@ -1,0 +1,78 @@
+/opt/beacon/mqtt-benchmark-sn # ./beacon_mbt run -c ./conf/emqx/t05-p01-m500-s10.ini
+INFO[2020-01-06T01:59:21Z] Loading configuration information from './conf/emqx/t05-p01-m500-s10.ini'
+INFO[2020-01-06T01:59:21Z] Configuration information ...
+[general] => {Debug:false Brokername:EMQX}, [mqtt-topic] => {Topicroot:Benchmark Numofeachlevel:5}, [mqtt-publisher] => {Scheme:tcp Hostname:172.17.0.2 Port:1883 Cleansession:true Qos:0 Pingtimeout:1 Keepalive:60 Username:x Password: Prefixname:PubBenchmark Prefixshort:PB Publisherseachtopic:1 Messageseachpublisher:500}, [mqtt-subscriber] => {Scheme:tcp Hostname:172.17.0.2 Port:1883 Cleansession:true Qos:0 Pingtimeout:1 Keepalive:60 Username:x Password: Prefixname:SubBenchmark Prefixshort:SB Subscribereachtopic:10}
+
+INFO[2020-01-06T01:59:21Z] Calculated data based on configuration information will be ...
+ -------------------------------------------------------------------------------------------------------------------
+ [Topics: 15], [publishers (Qos:0): 15 -> messages: 7,500], [subscribers (Qos:0): 150 <- messages: 75,000]
+ -------------------------------------------------------------------------------------------------------------------
+
+INFO[2020-01-06T01:59:21Z] Start subscriber worker for [Regular] ...
+INFO[2020-01-06T01:59:21Z] Start subscriber worker for [Special] ...
+INFO[2020-01-06T01:59:21Z] Start subscriber worker for [Supreme] ...
+INFO[2020-01-06T01:59:22Z] Start publisher worker for [Regular] ...
+INFO[2020-01-06T01:59:22Z] Start publisher worker for [Special] ...
+INFO[2020-01-06T01:59:22Z] Start publisher worker for [Supreme] ...
+INFO[2020-01-06T01:59:26Z] All [149] subscribers ready to go ...
+
+INFO[2020-01-06T01:59:27Z] All publishers ready to go ...
+
+INFO[2020-01-06T01:59:30Z] Publisher all [15] workers have finished their tasks ... 2596.393 ms ...
+
+WARN[2020-01-06T01:59:30Z] Subscribers ready to exit due to receive a stop signal, please wait ...
+INFO[2020-01-06T01:59:31Z] Subscribers have received 75000 messages, expected number is 75000 ...
+INFO[2020-01-06T01:59:31Z] Subscribers have unsubscribed their topics and disconnected [149] connections.
+
+INFO[2020-01-06T01:59:31Z] [REGULAR] Statistical information about publishing time (ms) of each message ......
+Size[5], Min[1.259], Mean[2.546], Max[4.979]
+PopulationVariance[1.769], SampleVariance[2.211], PopulationStandardDeviation[1.330], SampleStandardDeviation[1.487]
+PopulationSkew[0.940], SampleSkew[1.401], PopulationKurtosis[-0.505], SampleKurtosis[1.978]
+Publish Throughput => Fastest : 794 msg/sec, Mean: 393 msg/sec, Slowest: 201 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-06T01:59:31Z] [SPECIAL] Statistical information about publishing time (ms) of each message ......
+Size[5], Min[1.021], Mean[2.454], Max[5.149]
+PopulationVariance[2.056], SampleVariance[2.570], PopulationStandardDeviation[1.434], SampleStandardDeviation[1.603]
+PopulationSkew[1.068], SampleSkew[1.593], PopulationKurtosis[-0.268], SampleKurtosis[2.927]
+Publish Throughput => Fastest : 980 msg/sec, Mean: 407 msg/sec, Slowest: 194 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-06T01:59:31Z] [SUPREME] Statistical information about publishing time (ms) of each message ......
+Size[5], Min[0.545], Mean[2.322], Max[3.701]
+PopulationVariance[1.492], SampleVariance[1.865], PopulationStandardDeviation[1.221], SampleStandardDeviation[1.366]
+PopulationSkew[-0.123], SampleSkew[-0.183], PopulationKurtosis[-1.464], SampleKurtosis[-1.856]
+Publish Throughput => Fastest : 980 msg/sec, Mean: 407 msg/sec, Slowest: 194 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-06T01:59:31Z] [REGULAR] Statistical information about receiving time (ms) of each message ......
+Size[50], Min[3.331], Mean[4.364], Max[5.095]
+PopulationVariance[0.307], SampleVariance[0.313], PopulationStandardDeviation[0.554], SampleStandardDeviation[0.559]
+PopulationSkew[-0.604], SampleSkew[-0.623], PopulationKurtosis[-0.949], SampleKurtosis[-0.921]
+Subscribe Throughput => Fastest : 300 msg/sec, Mean: 229 msg/sec, Slowest: 196 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-06T01:59:31Z] [SPECIAL] Statistical information about receiving time (ms) of each message ......
+Size[50], Min[2.054], Mean[4.245], Max[5.188]
+PopulationVariance[0.652], SampleVariance[0.665], PopulationStandardDeviation[0.807], SampleStandardDeviation[0.815]
+PopulationSkew[-0.770], SampleSkew[-0.794], PopulationKurtosis[-0.275], SampleKurtosis[-0.174]
+Subscribe Throughput => Fastest : 487 msg/sec, Mean: 236 msg/sec, Slowest: 193 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-06T01:59:31Z] [SUPREME] Statistical information about receiving time (ms) of each message ......
+Size[50], Min[2.538], Mean[4.241], Max[4.941]
+PopulationVariance[0.317], SampleVariance[0.324], PopulationStandardDeviation[0.563], SampleStandardDeviation[0.569]
+PopulationSkew[-1.140], SampleSkew[-1.175], PopulationKurtosis[0.612], SampleKurtosis[0.808]
+Subscribe Throughput => Fastest : 487 msg/sec, Mean: 236 msg/sec, Slowest: 193 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-06T01:59:31Z] Worker Metrics Summary Information ...
+*********************************************************************************************************************************************************
+ Publishers'  amount       ...   Regular [5], Special [5], Supreme [5] ... (Qos:0) ... [PERFECT, 15 == (Target) 15]
+ Subscribers' amount       ...   Regular [50], Special [50], Supreme [50] ... (Qos:0) ... [PERFECT, 150 == (Target) 150]
+ Publishers'  connection   ...   Regular [5/(E)0,0,5], Special [5/(E)0,0,5], Supreme [5/(E)0,0,5]   ... [PERFECT, 15/15 == (Target) 15]
+ Subscribers' connection   ...   Regular [50/(E)0,0,0,50], Special [50/(E)0,0,0,50], Supreme [50/(E)0,0,0,49]   ... [IMPERFECT, 150/149 != (Target) 150]
+ Subscribers' unsubscribe  ...   Regular [50/(F)0], Special [50/(F)0], Supreme [49/(F)0]   ... [IMPERFECT, 149 != (Target) 150]
+ Publishers'  messages     ...   Regular [2500,2500/(F)0], Special [2500,2500/(F)0], Supreme [2500,2500/(F)0]   ... [PERFECT, 7500 == (Target) 7,500]
+ Subscribers' messages     ...   Regular [25000], Special [25000], Supreme [25000]   ... [PERFECT, 75000 == (Target) 75,000]
+*********************************************************************************************************************************************************
+ Benchmark Summary Information :
+ Publishers'  Throughput : 2,888 msg/sec, Time: 2596.39 ms
+ Subscribers' Throughput : 28,852 msg/sec, Time: 2599.42 ms
+**********************************************************
+ ****** Benchmark broker : 'EMQX' ******
+**********************************************************

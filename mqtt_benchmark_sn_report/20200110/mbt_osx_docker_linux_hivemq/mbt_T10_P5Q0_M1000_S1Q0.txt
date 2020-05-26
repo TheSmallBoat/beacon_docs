@@ -1,0 +1,86 @@
+abechua@Larrys-MacBook-Pro mqtt-benchmark-sn % ./mbt_osx run -c ./conf/docker_linux_20200110/mbt_T10_P5Q0_M1000_S1Q0.ini
+INFO[2020-01-10T17:48:27+13:00] Loading configuration information from './conf/docker_linux_20200110/mbt_T10_P5Q0_M1000_S1Q0.ini'
+INFO[2020-01-10T17:48:27+13:00] Configuration information ...
+[general] => {Debug:false Brokername:Beacon MBS_OSX}, [mqtt-topic] => {Topicroot:BenchmarkMBSOSX Numofeachlevel:10}, [mqtt-publisher] => {Scheme:tcp Hostname:127.0.0.1 Port:1883 Cleansession:true Qos:0 Pingtimeout:1 Keepalive:60 Username:x Password: Prefixname:PubBenchmark Prefixshort:PB Publisherseachtopic:5 Messageseachpublisher:1000 Enablestaticmessage:true Intervalmessagesgeneration:100}, [mqtt-subscriber] => {Scheme:tcp Hostname:127.0.0.1 Port:1883 Cleansession:true Qos:0 Pingtimeout:0 Keepalive:60 Username:x Password: Prefixname:SubBenchmark Prefixshort:SB Subscribereachtopic:1}
+
+INFO[2020-01-10T17:48:27+13:00] Calculated data based on configuration information will be ...
+ -------------------------------------------------------------------------------------------------------------------
+ [Topics: 30], [publishers (Qos:0): 150 -> messages: 150,000], [subscribers (Qos:0): 30 <- messages: 150,000]
+ -------------------------------------------------------------------------------------------------------------------
+
+INFO[2020-01-10T17:48:27+13:00] Start subscriber worker for [*Regular*] ...
+INFO[2020-01-10T17:48:27+13:00] Start subscriber worker for [*Special*] ...
+INFO[2020-01-10T17:48:27+13:00] Start subscriber worker for [*Supreme*] ...
+INFO[2020-01-10T17:48:28+13:00] All [30] subscribers ready to go ...
+
+INFO[2020-01-10T17:48:29+13:00] Start publisher worker for [*Regular*] ...
+INFO[2020-01-10T17:48:29+13:00] Start publisher worker for [*Special*] ...
+INFO[2020-01-10T17:48:29+13:00] Start publisher worker for [*Supreme*] ...
+INFO[2020-01-10T17:48:31+13:00] All publishers ready to go ...
+
+WARN[2020-01-10T17:48:33+13:00] Subscribers ready to exit due to receive a stop signal, please wait ...
+INFO[2020-01-10T17:48:33+13:00] [50000, 50000, 50000] messages have published ... [100.00%]
+INFO[2020-01-10T17:48:33+13:00] [413, 294, 113] messages have received ... [0.55%]
+INFO[2020-01-10T17:48:33+13:00] [150 // 150] publisher workers have finished their tasks ...
+INFO[2020-01-10T17:48:33+13:00] Publisher all [150] workers have finished their tasks ... 1955.772 ms ...
+
+INFO[2020-01-10T17:48:35+13:00] Subscribers have received [3827 // 150000] messages ... [2.55%]
+INFO[2020-01-10T17:48:37+13:00] Subscribers have received [10036 // 150000] messages ... [6.69%]
+INFO[2020-01-10T17:48:39+13:00] Subscribers have received [53177 // 150000] messages ... [35.45%]
+INFO[2020-01-10T17:48:41+13:00] Subscribers have received [110957 // 150000] messages ... [73.97%]
+INFO[2020-01-10T17:48:43+13:00] Subscribers have received [150000 // 150000] messages ... [100.00%]
+INFO[2020-01-10T17:48:43+13:00] Subscribers have unsubscribed their topics and disconnected [30] connections.
+
+INFO[2020-01-10T17:48:43+13:00] [REGULAR] Statistical information about publishing time (ms) of each message ......
+Size[50], Min[1.636], Mean[1.785], Max[1.864]
+PopulationVariance[0.003], SampleVariance[0.003], PopulationStandardDeviation[0.052], SampleStandardDeviation[0.053]
+PopulationSkew[-0.575], SampleSkew[-0.593], PopulationKurtosis[0.009], SampleKurtosis[0.140]
+Publish Throughput => Fastest : 611 msg/sec, Mean: 560 msg/sec, Slowest: 536 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-10T17:48:43+13:00] [SPECIAL] Statistical information about publishing time (ms) of each message ......
+Size[50], Min[1.654], Mean[1.747], Max[1.840]
+PopulationVariance[0.002], SampleVariance[0.002], PopulationStandardDeviation[0.044], SampleStandardDeviation[0.044]
+PopulationSkew[0.189], SampleSkew[0.195], PopulationKurtosis[-0.426], SampleKurtosis[-0.342]
+Publish Throughput => Fastest : 604 msg/sec, Mean: 572 msg/sec, Slowest: 543 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-10T17:48:43+13:00] [SUPREME] Statistical information about publishing time (ms) of each message ......
+Size[50], Min[1.663], Mean[1.740], Max[1.822]
+PopulationVariance[0.002], SampleVariance[0.002], PopulationStandardDeviation[0.042], SampleStandardDeviation[0.042]
+PopulationSkew[-0.111], SampleSkew[-0.114], PopulationKurtosis[-0.982], SampleKurtosis[-0.957]
+Publish Throughput => Fastest : 604 msg/sec, Mean: 572 msg/sec, Slowest: 543 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-10T17:48:43+13:00] [REGULAR] Statistical information about receiving time (ms) of each message ......
+Size[10], Min[1.984], Mean[2.095], Max[2.276]
+PopulationVariance[0.008], SampleVariance[0.008], PopulationStandardDeviation[0.087], SampleStandardDeviation[0.091]
+PopulationSkew[0.682], SampleSkew[0.809], PopulationKurtosis[-0.435], SampleKurtosis[0.195]
+Subscribe Throughput => Fastest : 504 msg/sec, Mean: 477 msg/sec, Slowest: 439 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-10T17:48:43+13:00] [SPECIAL] Statistical information about receiving time (ms) of each message ......
+Size[10], Min[2.049], Mean[2.146], Max[2.267]
+PopulationVariance[0.004], SampleVariance[0.005], PopulationStandardDeviation[0.065], SampleStandardDeviation[0.069]
+PopulationSkew[0.090], SampleSkew[0.107], PopulationKurtosis[-0.909], SampleKurtosis[-0.642]
+Subscribe Throughput => Fastest : 488 msg/sec, Mean: 466 msg/sec, Slowest: 441 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-10T17:48:43+13:00] [SUPREME] Statistical information about receiving time (ms) of each message ......
+Size[10], Min[2.035], Mean[2.154], Max[2.267]
+PopulationVariance[0.004], SampleVariance[0.004], PopulationStandardDeviation[0.064], SampleStandardDeviation[0.067]
+PopulationSkew[-0.333], SampleSkew[-0.395], PopulationKurtosis[-0.446], SampleKurtosis[0.176]
+Subscribe Throughput => Fastest : 488 msg/sec, Mean: 466 msg/sec, Slowest: 441 msg/sec
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO[2020-01-10T17:48:43+13:00] Worker Metrics Summary Information ...
+*********************************************************************************************************************************************************
+ Publishers'  amount       ...   Regular [50], Special [50], Supreme [50] ... (Qos:0) ... [PERFECT, 150 == (Target) 150]
+ Subscribers' amount       ...   Regular [10], Special [10], Supreme [10] ... (Qos:0) ... [PERFECT, 30 == (Target) 30]
+ Publishers'  connection   ...   Regular [50/(E)0,0,50], Special [50/(E)0,0,50], Supreme [50/(E)0,0,50]   ... [PERFECT, 150/150 == (Target) 150]
+ Subscribers' connection   ...   Regular [10/(E)0,0,0,10], Special [10/(E)0,0,0,10], Supreme [10/(E)0,0,0,10]   ... [PERFECT, 30/30 == (Target) 30]
+ Subscribers' unsubscribe  ...   Regular [10/(F)0], Special [10/(F)0], Supreme [10/(F)0]   ... [PERFECT, 30 == (Target) 30]
+ Publishers'  messages     ...   Regular [50000,50000/(F)0], Special [50000,50000/(F)0], Supreme [50000,50000/(F)0]   ... [PERFECT, 150000 == (Target) 150,000]
+ Subscribers' messages     ...   Regular [50000], Special [50000], Supreme [50000]   ... [PERFECT, 150000 == (Target) 150,000]
+*********************************************************************************************************************************************************
+ Benchmark Summary Information :
+ Publishers'  Throughput : 76,696 msg/sec, Time: 1955.77 ms
+ Subscribers' Throughput : 13,095 msg/sec, Time: 11454.13 ms
+**********************************************************
+ ****** Benchmark broker : 'Beacon MBS_OSX' ******
+ ****** Enable Static Content Messages Mode ******
+**********************************************************
