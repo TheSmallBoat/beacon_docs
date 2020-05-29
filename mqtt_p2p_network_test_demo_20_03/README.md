@@ -1,4 +1,4 @@
-## A Simple Test for mqtt broker service over the p2p network.
+## A simple test for mqtt broker service over the p2p network.
 
 ### [Screen Recording 2020-03-20]
 
